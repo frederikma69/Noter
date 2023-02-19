@@ -1,7 +1,7 @@
 # Noter
 
 ## Basics
-- Int prints only the integer of a decimal number i.e. rounding down
+- Int prints only the integer of a decimal number i.e. rounding down.
 
 ## Example of recursive function
 ``` C
@@ -73,3 +73,86 @@ int main(void)
     return 0;
 }
 ```
+## Integer array
+Example:
+``` c
+#include <stdio.h>
+
+int main(void ) {
+int arr[] = {1,2,3,4,5,6,7};
+for (int i = 1; i < 6; ++i)
+{
+printf("%d,", arr[i]);
+}
+return 0;
+}
+```
+- The ouput will in this example be the array [2,3,4,5,6]. It skips the first element.
+## Switch-statement
+- Example:
+``` c
+#include <stdio.h>
+
+int main(void) {
+    char c;
+    scanf("%c", &c);
+    printf("%c", c);
+    switch (c) {
+        case 'a':
+            printf("1");
+            break;
+        case 'b':
+            printf("1");
+            break;
+        default:
+            printf("!");
+    }
+    printf("\n");
+    return 0;
+}
+```
+Here the statemnt is finished with the 'default' statemnt that is used if none of the other cases match.
+## '=' or '=='
+In C the = operator is used to assign a value to a variable, where == is used to compare two numbers.
+An example of this use:
+```c
+int main(void ) {
+    int x;
+    scanf("%d", &x);
+    if(x == 0) {
+        printf("user put 0\n");
+    }
+    else
+    {
+        printf("User did not put 0\n");
+    }
+ return 0;
+} 
+````
+IT
+``` c
+int main(void ) {
+    int number;
+    int guess= 0;
+    srand((unsigned) time(0));
+    number = 1 + (number % 20); 
+    do{
+        printf("Input your guess\n");
+        scanf("%d", &guess);
+    } while(guess == number); 
+    printf("You won!\n");
+    return 0;
+}
+```
+## Output of array
+```c
+int main(void ) {
+    int ai[] = {1, 1};
+    if((ai[1] = 0))
+        printf("%d", ai[0]);
+    else
+        printf("%d,", ai[1]);
+ return 0;
+}
+```
+The output of this program will be '0'. This is because the expression (ai[1] = 0) assigns the value 0 to the second element of the array.
