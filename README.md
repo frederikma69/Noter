@@ -46,7 +46,7 @@ int main(void)
     return 0;
 }
 ```
-## Use of Arrowpointer '->'
+## Use of Arrow operator '->'
 -Example:
 ``` c
 #include <stdio.h>
@@ -156,3 +156,58 @@ int main(void ) {
 }
 ```
 The output of this program will be '0'. This is because the expression (ai[1] = 0) assigns the value 0 to the second element of the array.
+## Free Malloc
+- Malloc is freed after use. E.g. before return statement.
+## Printing a triangle
+```c
+- This will print 
+0
+1     *
+2    **
+3   ***
+4  ****
+5 *****
+#include <stdio.h>
+
+int main(void ) {
+    int i;
+    int j;
+    for (i = 0; i < 6; ++i) {
+        printf("%d", i);
+        for (j = 6; j > 0; --j) {
+            if(j > i)
+                printf(" ");
+            else
+                printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
+## Use of return NULL;
+- Example
+
+
+```c
+#include <stdio.h>
+
+typedef struct {
+    int key;
+    char name[10];
+} data_t;
+
+data_t* find_min(data_t* arr, int length) {
+    if (length <= 0) {
+        return NULL;  // If length is less than or equal to 0, return a null pointer
+    }
+
+    data_t *r = &arr[0];  // Initialize r to point to the first element of the array
+    for (int i = 1; i < length; ++i) {
+        if (arr[i].key < r->key) {  // If the key of the current element is less than r's key
+            r = &arr[i];  // Set r to point to the current element
+        }
+    }
+    return r;  // Return the pointer to the element with the minimum key
+}
+```
